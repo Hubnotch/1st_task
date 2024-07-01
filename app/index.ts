@@ -1,6 +1,7 @@
 import express, { Express } from "express";
+import { publicRoute } from "./routes/publicRoutes";
 require("dotenv").config();
-import { publicRoute } from "../routes/publicRoutes";
+
 
 export const app:Express = express();
 app.set("trust proxy", true);
