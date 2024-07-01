@@ -2,11 +2,11 @@
   "name": "1st_task",
   "version": "1.0.0",
   "description": "a simple server that returns user ip address, location and greeting",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "build": "npx tsc",
-    "start": "node dist/server.js",
-    "dev": "nodemon server.ts"
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon app/index.ts"
   },
   "keywords": [
     "node",

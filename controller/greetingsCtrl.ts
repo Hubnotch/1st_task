@@ -3,9 +3,6 @@ import requestIp from 'request-ip'
 import { getLocation, getTemperature } from "../utils/checkWeather";
 
 export const  greetingCtrl = async (request:Request, response:Response) =>{
-// console.log(request.socket.remoteAddress)
-
-console.log(request.ip);
 
   const visitorName = request.query.visitor_name || "Guest";
   const clientIp = requestIp.getClientIp(request) || "127.0.0.1";
