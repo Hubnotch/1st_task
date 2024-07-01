@@ -7,7 +7,7 @@ export const getTemperature = async (city: any) => {
     const response = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.OPENWEATHERMAP_API_KEY}`
     );
-    console.log(response)
+    console.log("getTemperature", response.data);
     return response.data.main.temp;
   } catch (error) {
     console.error("Error fetching weather data:", error);
@@ -19,7 +19,7 @@ export const getTemperature = async (city: any) => {
 export const getLocation = async (ip: any) => {
   try {
     const response = await axios.get(`http://ip-api.com/json/${ip}`);
-    console.log(response)
+    console.log("getLocation", response.data);
     return response.data;
   } catch (error) {
     console.error("Error fetching location data:", error);
