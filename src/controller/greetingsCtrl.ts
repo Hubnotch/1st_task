@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { getLocation, getTemperature } from "../utils/checkWeather";
 
-export const greetingCtrl = async (request: Request, response: Response) => {
+ const greetingCtrl = async (request: Request, response: Response) => {
   const visitorName = request.query.visitor_name || "Guest";
   const clientIp =
     request.headers["x-forwarded-for"] || request.socket.remoteAddress;

@@ -12,7 +12,7 @@ export const getTemperature = async (city: any) => {
     console.error("Error fetching weather data:", error);
     return null;
   }
-};;
+};
 
 
 export const getLocation = async (ip: any) => {
@@ -23,4 +23,4 @@ export const getLocation = async (ip: any) => {
     console.error("Error fetching location data:", error);
     return null;
   }
-};;
+};
