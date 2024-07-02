@@ -1,11 +1,10 @@
 import { Request,Response } from "express"
-import requestIp from 'request-ip'
 import { getLocation, getTemperature } from "../utils/checkWeather";
 
 export const  greetingCtrl = async (request:Request, response:Response) =>{
 
   const visitorName = request.query.visitor_name || "Guest";
-  const clientIp = requestIp.getClientIp(request) || "127.0.0.1";
+const clientIp = request.headers["x-forwarded-for"] || request.socket.remoteAddress;
   const locationData = await getLocation(clientIp);
   if (!locationData || !locationData.city) {
     return response.status(500).json({ error: "Unable to fetch location data" });
