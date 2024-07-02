@@ -49,6 +49,10 @@ app.use("/api/hello", async (request: Request, response: Response) => {
     greeting: `Hello, ${visitorName}!, the temperature is ${temperature} degrees Celsius in ${locationData.city}`,
   });
 });
+app.use("/", (request: Request, response: Response) => {
+  return response.status(200).json({ message: "Welcome to HNG11" });
+});
+
 // app.use('/api/hello',publicRoute)
 const PORT = process.env.PORT || 2024;
 app.listen(PORT, () => console.log(`Server running on : localhost:${PORT}`));
